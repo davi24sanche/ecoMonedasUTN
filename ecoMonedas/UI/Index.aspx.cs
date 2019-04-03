@@ -13,7 +13,7 @@ namespace ecoMonedas.UI
         {
             //Hola Marie
             //Hola jose
-            // HOLA 3 ESTA ES LA PRUEBA MIL
+            // HOLA ESTA ES LA PRUEBA MIL
         }
     }
 }
