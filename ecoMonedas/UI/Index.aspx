@@ -5,7 +5,7 @@
 
 
 
-    <asp:GridView runat="server">
+    <asp:GridView ID="dataGridView1" runat="server">
     </asp:GridView>
 
 </asp:Content>
