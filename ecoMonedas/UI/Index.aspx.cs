@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ecoMonedas.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,8 @@ namespace ecoMonedas.UI
         {
             //Hola Marie
             //Hola jose
-            // HOLA ESTA ES LA PRUEBA MIL
+            dataGridView1.DataSource = UsuarioLN.listaCategorias().ToList();
+            dataGridView1.DataBind();
         }
     }
 }
