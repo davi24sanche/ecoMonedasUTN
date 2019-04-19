@@ -180,10 +180,18 @@
     <Content Include="fonts\open-iconic\open-iconic.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\about.jpg" />
     <Content Include="images\bg_1.jpg" />
     <Content Include="images\bg_2.jpg" />
+    <Content Include="images\EcoMonedas\amarillo.jpg" />
+    <Content Include="images\EcoMonedas\azul.jpg" />
+    <Content Include="images\EcoMonedas\cpolis.png" />
+    <Content Include="images\EcoMonedas\dterra.jpg" />
     <Content Include="images\EcoMonedas\Fondo.jpg" />
+    <Content Include="images\EcoMonedas\mano-del-ambiente.jpg" />
+    <Content Include="images\EcoMonedas\multi.png" />
+    <Content Include="images\EcoMonedas\rojo.jpg" />
+    <Content Include="images\EcoMonedas\sap.png" />
+    <Content Include="images\EcoMonedas\verde.jpg" />
     <Content Include="images\image_1.jpg" />
     <Content Include="images\image_2.jpg" />
     <Content Include="images\image_3.jpg" />
@@ -200,6 +208,7 @@
     <Content Include="images\person_7.jpg" />
     <Content Include="images\person_8.jpg" />
     <Content Include="images\practice-1.jpg" />
+    <Content Include="images\EcoMonedas\video\BIC _ 2 minutos para entender el desarrollo sostenible - Spanish.mp4" />
     <Content Include="Scripts\aos.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
