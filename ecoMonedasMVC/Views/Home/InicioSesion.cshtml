@@ -1,0 +1,87 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact V3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/animate-2.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/main-2.css">
+</head>
+<body>
+
+    <div class="bg-contact3" style="background-image: url('images/Ecomonedas/Fondo.jpg');">
+        <div class="container-contact3">
+            <div class="wrap-contact3">
+                <form class="contact3-form validate-form">
+                    <span class="contact3-form-title" style="font-size:26px">
+                        Bienvenido a ecomonedas
+                    </span>
+
+                    <div class="wrap-input3 validate-input" data-validate="Usuario requerido">
+                        <input class="input3" type="text" name="name" placeholder="Usuario">
+                        <span class="focus-input3"></span>
+                    </div>
+
+                    <div class="wrap-input3 validate-input" data-validate="contraseña requerida">
+                        <input class="input3" type="text" name="email" placeholder="Contraseña">
+                        <span class="focus-input3"></span>
+                    </div>   
+
+                    <div class="container-contact3-form-btn">
+                        <button class="contact3-form-btn">
+                            Ingresar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/select2.min.js"></script>
+    <script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+    </script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+    </script>
+
+
+
+    @*<div class="container body-content">
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>*@
+</body>
+</html>
+

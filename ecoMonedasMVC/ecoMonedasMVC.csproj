@@ -150,6 +150,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate-2.css" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\aos.css" />
     <Content Include="Content\bootstrap-datepicker.css" />
@@ -160,14 +161,23 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\flaticon.css" />
+    <Content Include="Content\hamburgers.css" />
+    <Content Include="Content\hamburgers.min.css" />
     <Content Include="Content\icomoon.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery.timepicker.css" />
     <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\main-2.css" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\open-iconic-bootstrap.min.css" />
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.js" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\select2.min.js" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\util.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\flaticon\backup.txt" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
@@ -180,8 +190,6 @@
     <Content Include="fonts\open-iconic\open-iconic.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\bg_1.jpg" />
-    <Content Include="images\bg_2.jpg" />
     <Content Include="images\EcoMonedas\amarillo.jpg" />
     <Content Include="images\EcoMonedas\azul.jpg" />
     <Content Include="images\EcoMonedas\cpolis.png" />
@@ -192,22 +200,6 @@
     <Content Include="images\EcoMonedas\rojo.jpg" />
     <Content Include="images\EcoMonedas\sap.png" />
     <Content Include="images\EcoMonedas\verde.jpg" />
-    <Content Include="images\image_1.jpg" />
-    <Content Include="images\image_2.jpg" />
-    <Content Include="images\image_3.jpg" />
-    <Content Include="images\image_4.jpg" />
-    <Content Include="images\image_5.jpg" />
-    <Content Include="images\image_6.jpg" />
-    <Content Include="images\loc.png" />
-    <Content Include="images\person_1.jpg" />
-    <Content Include="images\person_2.jpg" />
-    <Content Include="images\person_3.jpg" />
-    <Content Include="images\person_4.jpg" />
-    <Content Include="images\person_5.jpg" />
-    <Content Include="images\person_6.jpg" />
-    <Content Include="images\person_7.jpg" />
-    <Content Include="images\person_8.jpg" />
-    <Content Include="images\practice-1.jpg" />
     <Content Include="images\EcoMonedas\video\BIC _ 2 minutos para entender el desarrollo sostenible - Spanish.mp4" />
     <Content Include="Scripts\aos.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
@@ -233,7 +225,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="images\.DS_Store" />
     <Content Include="fonts\.DS_Store" />
     <Content Include="fonts\flaticon\.DS_Store" />
     <Content Include="fonts\flaticon\font\.DS_Store" />
@@ -273,6 +264,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.waypoints.min.js" />
+    <Content Include="Scripts\main-2.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
@@ -309,6 +301,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\SobreNosotros\SobreNosotros.cshtml" />
+    <Content Include="Views\Home\InicioSesion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
