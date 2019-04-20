@@ -24,6 +24,7 @@ namespace ecoMonedasMVC.Models
 
         [Required]
         [StringLength(30)]
+        [Display(Name = "Usuario")]
         public string Nombre { get; set; }
 
         [Required]
