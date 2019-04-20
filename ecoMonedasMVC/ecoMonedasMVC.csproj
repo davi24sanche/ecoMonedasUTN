@@ -357,6 +357,7 @@
     <Content Include="Views\BilleteraVirtuals\Details.cshtml" />
     <Content Include="Views\BilleteraVirtuals\Edit.cshtml" />
     <Content Include="Views\BilleteraVirtuals\Index.cshtml" />
+    <Content Include="Views\Home\PanelCredenciales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
