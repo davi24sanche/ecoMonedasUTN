@@ -6,20 +6,22 @@ namespace ecoMonedasMVC.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Provincias
+    public partial class Colores
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Provincias()
+        public Colores()
         {
-            CentroAcopio = new HashSet<CentroAcopio>();
+            Material = new HashSet<Material>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
-        public int descripcion { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string descripcion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CentroAcopio> CentroAcopio { get; set; }
+        public virtual ICollection<Material> Material { get; set; }
     }
 }

@@ -6,36 +6,36 @@ namespace ecoMonedasMVC.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CentroAcopio")]
-    public partial class CentroAcopio
+    [Table("Material")]
+    public partial class Material
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CentroAcopio()
+        public Material()
         {
             Canjes = new HashSet<Canjes>();
+            DetalleCanjes = new HashSet<DetalleCanjes>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Nombre { get; set; }
-
-        public int ProvinciaId { get; set; }
+        public string nombre { get; set; }
 
         [Required]
-        public string DireccionExacta { get; set; }
+        public string imagen { get; set; }
 
-        [Required]
-        [StringLength(30)]
-        public string UsuarioId { get; set; }
+        public double precioUnidad { get; set; }
+
+        public int? colorId { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Canjes> Canjes { get; set; }
 
-        public virtual Provincias Provincias { get; set; }
+        public virtual Colores Colores { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetalleCanjes> DetalleCanjes { get; set; }
     }
 }
