@@ -47,12 +47,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -153,18 +147,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BilleteraVirtual.cs" />
-    <Compile Include="Models\Canjes.cs" />
-    <Compile Include="Models\CentroAcopio.cs" />
-    <Compile Include="Models\Colores.cs" />
-    <Compile Include="Models\Cupon.cs" />
-    <Compile Include="Models\CuponCliente.cs" />
-    <Compile Include="Models\DetalleCanjes.cs" />
-    <Compile Include="Models\EcoContext.cs" />
-    <Compile Include="Models\Material.cs" />
-    <Compile Include="Models\Provincias.cs" />
-    <Compile Include="Models\Rol.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -299,64 +281,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Views\Usuarios\Create.cshtml" />
-    <Content Include="Views\Usuarios\Delete.cshtml" />
-    <Content Include="Views\Usuarios\Details.cshtml" />
-    <Content Include="Views\Usuarios\Edit.cshtml" />
-    <Content Include="Views\Usuarios\Index.cshtml" />
-    <Content Include="Views\Rols\Create.cshtml" />
-    <Content Include="Views\Rols\Delete.cshtml" />
-    <Content Include="Views\Rols\Details.cshtml" />
-    <Content Include="Views\Rols\Edit.cshtml" />
-    <Content Include="Views\Rols\Index.cshtml" />
-    <Content Include="Views\Provincias\Create.cshtml" />
-    <Content Include="Views\Provincias\Delete.cshtml" />
-    <Content Include="Views\Provincias\Details.cshtml" />
-    <Content Include="Views\Provincias\Edit.cshtml" />
-    <Content Include="Views\Provincias\Index.cshtml" />
-    <Content Include="Views\Materials\Create.cshtml" />
-    <Content Include="Views\Materials\Delete.cshtml" />
-    <Content Include="Views\Materials\Details.cshtml" />
-    <Content Include="Views\Materials\Edit.cshtml" />
-    <Content Include="Views\Materials\Index.cshtml" />
-    <Content Include="Views\DetalleCanjes\Create.cshtml" />
-    <Content Include="Views\DetalleCanjes\Delete.cshtml" />
-    <Content Include="Views\DetalleCanjes\Details.cshtml" />
-    <Content Include="Views\DetalleCanjes\Edit.cshtml" />
-    <Content Include="Views\DetalleCanjes\Index.cshtml" />
-    <Content Include="Views\CuponClientes\Create.cshtml" />
-    <Content Include="Views\CuponClientes\Delete.cshtml" />
-    <Content Include="Views\CuponClientes\Details.cshtml" />
-    <Content Include="Views\CuponClientes\Edit.cshtml" />
-    <Content Include="Views\CuponClientes\Index.cshtml" />
-    <Content Include="Views\Cupons\Create.cshtml" />
-    <Content Include="Views\Cupons\Delete.cshtml" />
-    <Content Include="Views\Cupons\Details.cshtml" />
-    <Content Include="Views\Cupons\Edit.cshtml" />
-    <Content Include="Views\Cupons\Index.cshtml" />
-    <Content Include="Views\Colores\Create.cshtml" />
-    <Content Include="Views\Colores\Delete.cshtml" />
-    <Content Include="Views\Colores\Details.cshtml" />
-    <Content Include="Views\Colores\Edit.cshtml" />
-    <Content Include="Views\Colores\Index.cshtml" />
-    <Content Include="Views\CentroAcopios\Create.cshtml" />
-    <Content Include="Views\CentroAcopios\Delete.cshtml" />
-    <Content Include="Views\CentroAcopios\Details.cshtml" />
-    <Content Include="Views\CentroAcopios\Edit.cshtml" />
-    <Content Include="Views\CentroAcopios\Index.cshtml" />
-    <Content Include="Views\Canjes\Create.cshtml" />
-    <Content Include="Views\Canjes\Delete.cshtml" />
-    <Content Include="Views\Canjes\Details.cshtml" />
-    <Content Include="Views\Canjes\Edit.cshtml" />
-    <Content Include="Views\Canjes\Index.cshtml" />
-    <Content Include="Views\BilleteraVirtuals\Create.cshtml" />
-    <Content Include="Views\BilleteraVirtuals\Delete.cshtml" />
-    <Content Include="Views\BilleteraVirtuals\Details.cshtml" />
-    <Content Include="Views\BilleteraVirtuals\Edit.cshtml" />
-    <Content Include="Views\BilleteraVirtuals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
