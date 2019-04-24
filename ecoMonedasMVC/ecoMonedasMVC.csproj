@@ -138,6 +138,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CentroAcopioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuUsuarioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -309,6 +310,11 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Home\InicioSesion.cshtml" />
     <Content Include="Views\MenuUsuario\Index.cshtml" />
+    <Content Include="Views\CentroAcopio\Create.cshtml" />
+    <Content Include="Views\CentroAcopio\Delete.cshtml" />
+    <Content Include="Views\CentroAcopio\Details.cshtml" />
+    <Content Include="Views\CentroAcopio\Edit.cshtml" />
+    <Content Include="Views\CentroAcopio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

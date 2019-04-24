@@ -30,7 +30,9 @@ namespace ecoMonedasMVC.Controllers
 
         public ActionResult InicioSesion()
         {
+
             return View();
+
         }
 
         [HttpPost]
