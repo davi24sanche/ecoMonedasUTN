@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ecoMonedasMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -29,8 +30,27 @@ namespace ecoMonedasMVC.Controllers
 
         public ActionResult InicioSesion()
         {
+
             return View();
+
         }
+
+        [HttpPost]
+        public ActionResult ValidarUsuario(string email, string password) {
+
+            var db = new EcoContextDB();
+            Usuario Usuario = db.Usuario
+                                .Where(x => x.Contrasenna.Equals(password))
+                                .Where(x => x.Email.Equals(email)).FirstOrDefault();
+
+            if (Usuario != null) {
+               return Redirect("/MenuUsuario/Index");
+            }
+
+            return View("Index");
+        }
+
+
 
     }
 }

@@ -20,6 +20,7 @@ namespace ecoMonedasMVC.Models
 
         [Key]
         [StringLength(30)]
+        [Required]
         public string Email { get; set; }
 
         [Required]
