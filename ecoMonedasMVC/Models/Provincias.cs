@@ -14,10 +14,10 @@ namespace ecoMonedasMVC.Models
             CentroAcopio = new HashSet<CentroAcopio>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-        public int descripcion { get; set; }
+        public string descripcion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CentroAcopio> CentroAcopio { get; set; }

@@ -13,8 +13,20 @@ namespace ecoMonedasMVC.Controllers
         {
             return View();
         }
-        
+        //GET: MenuUsuario/Administrador
+        public ActionResult Administrador()
+        {
+            return View();
+        }
+        //GET: MenuUsuario/AdministradorCentroAcopio
+        public ActionResult AdministradorCentroAcopio() {
+            return View();
+        }
+        //GET: MenuUsuario/Cliente
+        public ActionResult Cliente() {
+            return View();
+        }
 
-        
+
     }
 }

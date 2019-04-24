@@ -15,7 +15,7 @@ namespace ecoMonedasMVC.Models
             Canjes = new HashSet<Canjes>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
@@ -30,6 +30,9 @@ namespace ecoMonedasMVC.Models
         [Required]
         [StringLength(30)]
         public string UsuarioId { get; set; }
+
+        [Required]
+        public int Estado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Canjes> Canjes { get; set; }

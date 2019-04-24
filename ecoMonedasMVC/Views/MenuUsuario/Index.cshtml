@@ -1,9 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+
+    Layout = "~/Views/Shared/_UsuariosLayout.cshtml";
 }
 
 <h2>Index</h2>
 
-
 <h3>Bienvenido al panel de usuario</h3>
+
+
+@Html.ActionLink("Ir al panel Administrativo","Administrador")

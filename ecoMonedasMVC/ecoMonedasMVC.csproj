@@ -315,6 +315,10 @@
     <Content Include="Views\CentroAcopio\Details.cshtml" />
     <Content Include="Views\CentroAcopio\Edit.cshtml" />
     <Content Include="Views\CentroAcopio\Index.cshtml" />
+    <Content Include="Views\Shared\_UsuariosLayout.cshtml" />
+    <Content Include="Views\MenuUsuario\Administrador.cshtml" />
+    <Content Include="Views\MenuUsuario\AdministradorCentroAcopio.cshtml" />
+    <Content Include="Views\MenuUsuario\Cliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
