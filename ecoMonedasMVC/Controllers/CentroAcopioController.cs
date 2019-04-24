@@ -39,7 +39,7 @@ namespace ecoMonedasMVC.Controllers
         // GET: CentroAcopio/Create
         public ActionResult Create()
         {
-            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "id");
+            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion");
             ViewBag.UsuarioId = new SelectList(db.Usuario, "Email", "Nombre");
             return View();
         }
@@ -49,16 +49,18 @@ namespace ecoMonedasMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,ProvinciaId,DireccionExacta,UsuarioId")] CentroAcopio centroAcopio)
+        public ActionResult Create(CentroAcopio centroAcopio)
         {
             if (ModelState.IsValid)
             {
+                centroAcopio.Estado = 0;
                 db.CentroAcopio.Add(centroAcopio);
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "id", centroAcopio.ProvinciaId);
+            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion", centroAcopio.ProvinciaId);
             ViewBag.UsuarioId = new SelectList(db.Usuario, "Email", "Nombre", centroAcopio.UsuarioId);
             return View(centroAcopio);
         }
@@ -75,7 +77,7 @@ namespace ecoMonedasMVC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "id", centroAcopio.ProvinciaId);
+            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion", centroAcopio.ProvinciaId);
             ViewBag.UsuarioId = new SelectList(db.Usuario, "Email", "Nombre", centroAcopio.UsuarioId);
             return View(centroAcopio);
         }
@@ -93,7 +95,7 @@ namespace ecoMonedasMVC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "id", centroAcopio.ProvinciaId);
+            ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion", centroAcopio.ProvinciaId);
             ViewBag.UsuarioId = new SelectList(db.Usuario, "Email", "Nombre", centroAcopio.UsuarioId);
             return View(centroAcopio);
         }
