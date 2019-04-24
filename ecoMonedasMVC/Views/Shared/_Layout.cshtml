@@ -46,7 +46,6 @@
                     <li class="nav-item">@Html.ActionLink("Centros de Acopio", "Index", "Home", new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Materiales de reciclaje", "Index", "Home", new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Iniciar Sesión", "InicioSesion", "Home", new { @class = "nav-link" })</li>
-
                 </ul>
             </div>
         </div>
@@ -76,12 +75,8 @@
     <section class="ftco-section" id="section-counter" style="background-color:black!important">
         <div class="container-fluid">
             <div class="row d-flex">
-                <div class="col-md-6 d-flex">
-                    <div class="row justify-content-start pt-3 pb-3" 
-                         style="background-image:url('images/EcoMonedas/amarillo.jpg');">               
-                    </div>
-                </div>
-                <div class="col-md-6 px-5 py-5">
+                <div class="col-md-2"></div>
+               <div class="col-md-12 px-5 py-5">
                     <div class="row justify-content-start pt-3 pb-3">
                         <div class="col-md-12 heading-section ftco-animate">
 
@@ -98,6 +93,7 @@
 
                     </div>
                 </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </section>
@@ -152,30 +148,37 @@
         <div class="container">
             <table class="table table-hover">
                 <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
+                    <tr style="background-color: greenyellow;text-align: center;color: darkblue;">
+                        <th scope="col" colspan="1">Centro de acopio</th>
+                        <th scope="col">Dirección y horarios</th>
+                        <th scope="col">Teléfono</th>
+                   </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>hoi</td>
+                        <th scope="row">Curridabat</th>
+                        <td>Centro comercial Multiplaza Curridabat. Curridabat, Parqueo frente a Librería Universal. Horario: Todos los miércoles de 8:00 a.m. a 5:30 p.m. y los primeros jueves y viernes de cada mes de 8:00 a.m. a 5:00 p.m.</td>
+                        <td>2234-5252</td>                      
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>jkjk</td>
+                        <th scope="row">Desamparados</th>
+                        <td>Complejo Ecológico Municipal de Desamparados. Horario: De lunes a viernes de 6:00 a.m. a 4:00 p.m.</td>
+                        <td>2274-3059</td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>kjkjk</td>
+                        <th scope="row">Escazú</th>
+                        <td>Centro comercial Multiplaza Escazú, Frente a Cinemark. Horario: Todos los miércoles de 8:00 a.m. a 5:30 p.m. y los primeros jueves y viernes de cada mes de 8:00 a.m. a 6:00 p.m.</td>
+                        <td>2201-6025</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tibás</th>
+                        <td>100 metros al sur del Costado este de Walmart. Horario:de Lunes a Jueves de 6:00a.m. a 10:00a.m</td>
+                        <td>2222-0132</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Montes de Oca</th>
+                        <td>San José, 300 metros este de la Iglesia de San Pedro de Montes de Oca. Horario: Primer jueves y viernes de cada mes de 6:00 a.m. a 5:30 p.m</td>
+                        <td>2527-7830</td>
                     </tr>
                 </tbody>
             </table>
