@@ -121,7 +121,10 @@ namespace ecoMonedasMVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             CentroAcopio centroAcopio = db.CentroAcopio.Find(id);
-            db.CentroAcopio.Remove(centroAcopio);
+
+            db.Entry(centroAcopio).State = EntityState.Modified;
+            centroAcopio.Estado = 1;
+            db.CentroAcopio.Add(centroAcopio);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
