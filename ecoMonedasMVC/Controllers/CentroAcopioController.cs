@@ -91,8 +91,11 @@ namespace ecoMonedasMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                db.CentroAcopio.Add(centroAcopio);
                 db.Entry(centroAcopio).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion", centroAcopio.ProvinciaId);
@@ -122,9 +125,23 @@ namespace ecoMonedasMVC.Controllers
         {
             CentroAcopio centroAcopio = db.CentroAcopio.Find(id);
 
-            db.Entry(centroAcopio).State = EntityState.Modified;
+            
             centroAcopio.Estado = 1;
             db.CentroAcopio.Add(centroAcopio);
+            db.Entry(centroAcopio).State = EntityState.Modified;
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
+        public ActionResult HabilitarAcopio(int id)
+        {
+            CentroAcopio centroAcopio = db.CentroAcopio.Find(id);
+            
+            centroAcopio.Estado = 0;
+            db.CentroAcopio.Add(centroAcopio);
+            db.Entry(centroAcopio).State = EntityState.Modified;
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

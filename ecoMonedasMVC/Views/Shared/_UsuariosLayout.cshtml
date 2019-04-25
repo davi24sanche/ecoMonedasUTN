@@ -40,14 +40,15 @@
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">@Html.ActionLink("Billetera Virtual", "Index", "Home", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Canjes", "Index", "Home", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Cupones canjeados", "Index", "Home", new { @class = "nav-link" })</li>
-                 </ul>
+                    @RenderSection("Menu",required: false);
+
+
+                    
+                </ul>
             </div>
         </div>
     </nav>
-
+    
   <br /> <br /> <br />
 
         @RenderBody()

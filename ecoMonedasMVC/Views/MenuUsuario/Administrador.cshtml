@@ -6,8 +6,15 @@
     Layout = "~/Views/Shared/_UsuariosLayout.cshtml";
 }
 
+@section Menu {
+    <li class="nav-item">@Html.ActionLink("Billetera Virtual", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Canjes", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Cupones canjeados", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Centros de acopio", "Index", "Home", new { @class = "nav-link" })</li>
+}
+
 <h2>Index</h2>
 
 <h3>Bienvenido al panel de administradores</h3>
 
-@Html.ActionLink("Administrar Centros de Acopio", "Index", "CentroAcopio");
+@Html.ActionLink("Administrar Centros de Acopio", "Index", "CentroAcopio")
