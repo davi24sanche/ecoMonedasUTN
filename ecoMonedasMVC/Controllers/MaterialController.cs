@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -17,25 +18,11 @@ namespace ecoMonedasMVC.Controllers
         // GET: Material
         public ActionResult Index()
         {
+            ViewBag.Mensaje = TempData["Mensaje"];
             var material = db.Material.Include(m => m.Colores);
             return View(material.ToList());
         }
-
-        // GET: Material/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Material material = db.Material.Find(id);
-            if (material == null)
-            {
-                return HttpNotFound();
-            }
-            return View(material);
-        }
-
+        
         // GET: Material/Create
         public ActionResult Create()
         {
@@ -48,11 +35,23 @@ namespace ecoMonedasMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,imagen,precioUnidad,colorId")] Material material)
+        public ActionResult Create(Material material, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                if (upload != null) {
+
+                    string path = Server.MapPath("~/Content/Imagenes/");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    upload.SaveAs(path + Path.GetFileName(upload.FileName));
+                    material.imagen = upload.FileName;
+                }
+
                 db.Material.Add(material);
+                TempData["Mensaje"] = "Material Creado Correctamente";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,12 +65,12 @@ namespace ecoMonedasMVC.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
             Material material = db.Material.Find(id);
             if (material == null)
             {
-                return HttpNotFound();
+                return View("Error");
             }
             ViewBag.colorId = new SelectList(db.Colores, "id", "descripcion", material.colorId);
             return View(material);
@@ -82,42 +81,39 @@ namespace ecoMonedasMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,imagen,precioUnidad,colorId")] Material material)
+        public ActionResult Edit(Material material, HttpPostedFileBase archivo)
         {
             if (ModelState.IsValid)
             {
+                if (archivo != null)
+                {
+
+                    string path = Server.MapPath("~/Content/Imagenes/");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    archivo.SaveAs(path + Path.GetFileName(archivo.FileName));
+                    material.imagen = archivo.FileName;
+                }
+
+
+
                 db.Entry(material).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["Mensaje"] = "Material Actualizado!!!";
                 return RedirectToAction("Index");
             }
             ViewBag.colorId = new SelectList(db.Colores, "id", "descripcion", material.colorId);
             return View(material);
         }
-
-        // GET: Material/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Material material = db.Material.Find(id);
-            if (material == null)
-            {
-                return HttpNotFound();
-            }
-            return View(material);
+        
+        public ActionResult Error() {
+            return View();
         }
-
-        // POST: Material/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult VolverAlPanelUsuario()
         {
-            Material material = db.Material.Find(id);
-            db.Material.Remove(material);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return Redirect("/MenuUsuario/Administrador");
         }
 
         protected override void Dispose(bool disposing)

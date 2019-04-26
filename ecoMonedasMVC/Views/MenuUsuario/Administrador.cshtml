@@ -7,11 +7,13 @@
 }
 
 @section Menu {
-    <li class="nav-item">@Html.ActionLink("Gestión Centros de acopio", "Index", "CentroAcopio", new { @class = "nav-link" })</li>
-    <li class="nav-item">@Html.ActionLink("Gestión materiales reciclables", "Index", "Home", new { @class = "nav-link" })</li>
-    <li class="nav-item">@Html.ActionLink("Gestión de usuarios", "Index", "Home", new { @class = "nav-link" })</li>
-    <li class="nav-item">@Html.ActionLink("Cupones canjes", "Index", "Home", new { @class = "nav-link" })</li>
-    <li class="nav-item">@Html.ActionLink("Cambiar contraseña", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Gestión Centros de acopio","CentroAcopio", "MenuUsuario", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Gestión materiales reciclables", "Materiales", "MenuUsuario", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Gestión de usuarios", "Usuario", "MenuUsuario", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Cupones canjes", "Cupones", "MenuUsuario", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Cambiar contraseña", "CambiarContrasenna", "MenuUsuario", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Cerrar Session", "CerrarSession", "MenuUsuario", new { @class = "nav-link" })</li>
 }
 
 <h3>Bienvenido al panel de administradores</h3>
+<hr />

@@ -29,17 +29,19 @@
 </style>
 <body>
 
-
-    @if ( ((ecoMonedasMVC.Models.Usuario)Session["Usuario"]) == null){
-        Response.Redirect("/");
-    }
-
+    
+    
     @*-- nav*@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
         <div class="container">
-
-            @Html.ActionLink(((ecoMonedasMVC.Models.Usuario)Session["Usuario"]).Nombre, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-
+            @if (((ecoMonedasMVC.Models.Usuario)Session["Usuario"]) == null)
+            {
+                Response.Redirect("/");
+            }
+            else
+            {
+                @Html.ActionLink(((ecoMonedasMVC.Models.Usuario)Session["Usuario"]).Nombre + " " + ((ecoMonedasMVC.Models.Usuario)Session["Usuario"]).Apellidos, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            }
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
@@ -47,7 +49,7 @@
                 <ul class="navbar-nav ml-auto">
 
                     @RenderSection("Menu", required: false)
-                    
+
                 </ul>
             </div>
         </div>

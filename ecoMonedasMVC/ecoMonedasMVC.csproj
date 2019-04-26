@@ -302,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -322,10 +323,10 @@
     <Content Include="Views\MenuUsuario\AdministradorCentroAcopio.cshtml" />
     <Content Include="Views\MenuUsuario\Cliente.cshtml" />
     <Content Include="Views\Material\Create.cshtml" />
-    <Content Include="Views\Material\Delete.cshtml" />
-    <Content Include="Views\Material\Details.cshtml" />
     <Content Include="Views\Material\Edit.cshtml" />
     <Content Include="Views\Material\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutMantenimiento.cshtml" />
+    <Content Include="Views\MenuUsuario\CambiarContrasenna.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

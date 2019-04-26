@@ -20,15 +20,19 @@ namespace ecoMonedasMVC.Models
 
         [Required]
         [StringLength(50)]
+        [Display(Name ="Centro de Acopio")]
         public string Nombre { get; set; }
 
+        [Display(Name = "Provincia")]
         public int ProvinciaId { get; set; }
 
         [Required]
+        [Display(Name = "Dirección Exacta")]
         public string DireccionExacta { get; set; }
 
         [Required]
         [StringLength(30)]
+        [Display(Name = "Usuario")]
         public string UsuarioId { get; set; }
 
         [Required]

@@ -17,6 +17,10 @@ namespace ecoMonedasMVC.Controllers
         // GET: CentroAcopio
         public ActionResult Index()
         {
+            if (TempData.ContainsKey("Mensaje"))
+            {
+                ViewBag.Mensaje = TempData["Mensaje"].ToString();
+            }
             var centroAcopio = db.CentroAcopio.Include(c => c.Provincias).Include(c => c.Usuario);
             return View(centroAcopio.ToList());
         }
@@ -26,12 +30,12 @@ namespace ecoMonedasMVC.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
             CentroAcopio centroAcopio = db.CentroAcopio.Find(id);
             if (centroAcopio == null)
             {
-                return HttpNotFound();
+                return View("Error");
             }
             return View(centroAcopio);
         }
@@ -70,15 +74,23 @@ namespace ecoMonedasMVC.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
             CentroAcopio centroAcopio = db.CentroAcopio.Find(id);
             if (centroAcopio == null)
             {
-                return HttpNotFound();
+                return View("Error");
             }
+            if (centroAcopio.Estado == 1) {
+
+                TempData["Mensaje"] = "No puede editar un centro de acopio deshabilitado";
+                return RedirectToAction("Index");
+            }
+            
+
             ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion", centroAcopio.ProvinciaId);
             ViewBag.UsuarioId = new SelectList(db.Usuario, "Email", "Nombre", centroAcopio.UsuarioId);
+
             return View(centroAcopio);
         }
 
@@ -96,10 +108,12 @@ namespace ecoMonedasMVC.Controllers
                 db.Entry(centroAcopio).State = EntityState.Modified;
                 db.SaveChanges();
 
+                TempData["Mensaje"] = "Guardado Correctamente";
                 return RedirectToAction("Index");
             }
             ViewBag.ProvinciaId = new SelectList(db.Provincias, "id", "descripcion", centroAcopio.ProvinciaId);
             ViewBag.UsuarioId = new SelectList(db.Usuario, "Email", "Nombre", centroAcopio.UsuarioId);
+
             return View(centroAcopio);
         }
 
@@ -108,12 +122,12 @@ namespace ecoMonedasMVC.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
             CentroAcopio centroAcopio = db.CentroAcopio.Find(id);
             if (centroAcopio == null)
             {
-                return HttpNotFound();
+                return View("Error");
             }
             return View(centroAcopio);
         }
@@ -143,6 +157,8 @@ namespace ecoMonedasMVC.Controllers
             db.Entry(centroAcopio).State = EntityState.Modified;
 
             db.SaveChanges();
+
+            TempData["Mensaje"] = "Centro de acopio habilitado!";
             return RedirectToAction("Index");
         }
 
@@ -154,5 +170,16 @@ namespace ecoMonedasMVC.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult VolverAlPanelUsuario()
+        {
+            return Redirect("/MenuUsuario/Administrador");
+        }
+
+        public ActionResult Error() {
+
+            return View();
+        }
+
     }
 }

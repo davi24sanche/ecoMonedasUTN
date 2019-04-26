@@ -16,16 +16,15 @@ namespace ecoMonedasMVC.Models
             DetalleCanjes = new HashSet<DetalleCanjes>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string nombre { get; set; }
-
-        [Required]
+        
         public string imagen { get; set; }
-
+        [Required]
         public double precioUnidad { get; set; }
 
         public int? colorId { get; set; }

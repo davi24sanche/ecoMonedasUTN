@@ -13,10 +13,11 @@ namespace ecoMonedasMVC.Models
         {
             CentroAcopio = new HashSet<CentroAcopio>();
         }
-
+        [Display(Name = "Provincia")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
+        [Display(Name = "Descripción de Provincia")]
         public string descripcion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,10 +1,11 @@
 ﻿@model ecoMonedasMVC.Models.CentroAcopio
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Creando Centro";
+    Layout = "~/Views/Shared/_LayoutMantenimiento.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Creando Nuevo</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -40,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UsuarioId, "UsuarioId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Usuario</label>
             <div class="col-md-10">
                 @Html.DropDownList("UsuarioId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UsuarioId, "", new { @class = "text-danger" })
@@ -49,12 +50,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar Nuevo Centro de Acopio" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver al listado", "Index")
 </div>

@@ -31,7 +31,28 @@ namespace ecoMonedasMVC.Controllers
 
         public ActionResult InicioSesion()
         {
-            return View();
+            if (((ecoMonedasMVC.Models.Usuario)Session["Usuario"]) == null)
+            {
+                return View();
+            }
+            else {
+                Usuario UsuarioCon = (ecoMonedasMVC.Models.Usuario)Session["Usuario"];
+                
+                if (UsuarioCon.Rol == 0)
+                {
+                    return Redirect("/MenuUsuario/Administrador");
+                }
+                if (UsuarioCon.Rol == 1)
+                {
+                    return Redirect("/MenuUsuario/AdministradorCentroAcopio");
+                }
+                if (UsuarioCon.Rol == 2)
+                {
+                    return Redirect("/MenuUsuario/Cliente");
+                }
+
+                return Redirect("/MenuUsuario/Index");
+            }
         }
 
         [HttpPost]
@@ -56,7 +77,7 @@ namespace ecoMonedasMVC.Controllers
                 if (Usuario.Rol == 2) {
                     return Redirect("/MenuUsuario/Cliente");
                 }
-
+                
                 return Redirect("/MenuUsuario/Index");
 
             }

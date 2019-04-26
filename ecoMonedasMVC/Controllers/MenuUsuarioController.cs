@@ -8,9 +8,13 @@ namespace ecoMonedasMVC.Controllers
 {
     public class MenuUsuarioController : Controller
     {
+
+
+
         // GET: MenuUsuario
         public ActionResult Index()
         {
+            
             return View();
         }
         //GET: MenuUsuario/Administrador
@@ -26,7 +30,31 @@ namespace ecoMonedasMVC.Controllers
         public ActionResult Cliente() {
             return View();
         }
+        public ActionResult CentroAcopio()
+        {
+            return Redirect("/CentroAcopio/Index");
+        }
+        public ActionResult Materiales()
+        {
+            return Redirect("/Material/Index");
+        }
+        public ActionResult Usuario()
+        {
+            return Redirect("/Usuario/Index");
+        }
+        public ActionResult Cupones()
+        {
+            return Redirect("/Cupon/Index");
+        }
+        public ActionResult CambiarContrasenna() {
 
+            return View();
 
+        }
+
+        public ActionResult CerrarSession()
+        {
+            return Redirect("/");
+        }
     }
 }
