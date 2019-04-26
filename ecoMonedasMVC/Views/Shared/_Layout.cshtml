@@ -42,16 +42,10 @@
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                   <li class="nav-item">@Html.ActionLink("Sobre Ecomonedas", "Index", "Home", new { @class = "nav-link" })</li>                  
-                    <li class="nav-item">@Html.ActionLink("Centros de Acopio", "Index", "Home", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Materiales de reciclaje", "Index", "Home", new { @class = "nav-link" })</li>
+                   <li class="nav-item"><a href="#section-counter" class="nav-link">Sobre Ecomonedas</a></li>                  
+                    <li class="nav-item"><a href="#centrosacopio" class="nav-link">Centros de Acopio</a></li>
+                    <li class="nav-item"><a href="#matreciclaje" class="nav-link">Materiales de reciclaje</a></li>
                     <li class="nav-item">@Html.ActionLink("Iniciar Sesión", "InicioSesion", "Home", new { @class = "nav-link" })</li>
-    
-                
-                
-                    <li class="nav-item">@Html.ActionLink("PANEL USUARIOS", "Index", "MenuUsuario", new { @class = "nav-link" })</li>
-
-                
                 </ul>
             </div>
         </div>
@@ -152,7 +146,7 @@
     @*--circulitos*@
     <section class="ftco-section bg-dark">
         <div class="container">
-            <h1 style="color:white;text-align:center">Centros de acopio asociados a Ecomonedas</h1>
+            <h1 id="centrosacopio" style="color:white;text-align:center">Centros de acopio asociados a Ecomonedas</h1>
             <table class="table table-hover" style="margin-top:55px">
                 <thead>
                     <tr style="background-color: greenyellow;text-align: center;color: darkblue;">
@@ -201,7 +195,7 @@
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
                  
-                    <h2 class="mb-4">Materiales de reciclaje</h2>
+                    <h2 id="matreciclaje" class="mb-4">Materiales de reciclaje</h2>
                 </div>
             </div>
             <div class="row">
@@ -408,7 +402,7 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                     
+
                         <p>Visita nuestras redes sociales para conocer mas sobre Ecomonedas</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
@@ -417,8 +411,16 @@
                         </ul>
                     </div>
                 </div>
+                @if (ViewBag.Mensaje != "" && ViewBag.Mensaje != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>@ViewBag.Mensaje</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
 
-       
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Contáctanos</h2>

@@ -326,8 +326,6 @@
     <Content Include="Views\Material\Details.cshtml" />
     <Content Include="Views\Material\Edit.cshtml" />
     <Content Include="Views\Material\Index.cshtml" />
-    <Content Include="Views\Shared\_AdminCentroAcopioLayout.cshtml" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

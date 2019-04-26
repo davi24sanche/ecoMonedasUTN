@@ -11,6 +11,7 @@ namespace ecoMonedasMVC.Controllers
     {
         public ActionResult Index()
         {
+            Session.Add("Usuario", null);
             return View();
         }
 
@@ -30,9 +31,7 @@ namespace ecoMonedasMVC.Controllers
 
         public ActionResult InicioSesion()
         {
-
             return View();
-
         }
 
         [HttpPost]
@@ -44,10 +43,26 @@ namespace ecoMonedasMVC.Controllers
                                 .Where(x => x.Email.Equals(email)).FirstOrDefault();
 
             if (Usuario != null) {
-               return Redirect("/MenuUsuario/Index");
-            }
+               Session["Usuario"] = Usuario;
 
-            return View("Index");
+                if (Usuario.Rol == 0)
+                {
+                    return Redirect("/MenuUsuario/Administrador");
+                }
+                if (Usuario.Rol == 1)
+                {
+                    return Redirect("/MenuUsuario/AdministradorCentroAcopio");
+                }
+                if (Usuario.Rol == 2) {
+                    return Redirect("/MenuUsuario/Cliente");
+                }
+
+                return Redirect("/MenuUsuario/Index");
+
+            }
+            ViewBag.Mensaje = "Usuario o contraseña invalidos!";
+
+            return View("InicioSesion");
         }
 
 

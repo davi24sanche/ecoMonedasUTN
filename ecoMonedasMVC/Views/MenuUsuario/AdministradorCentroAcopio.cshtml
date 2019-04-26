@@ -1,1 +1,13 @@
 ﻿
+@{
+    ViewBag.Title = "AdministradorCentroAcopio";
+
+    Layout = "~/Views/Shared/_UsuariosLayout.cshtml";
+}
+
+@section Menu {
+    <li class="nav-item">@Html.ActionLink("Registrar el canje de productos", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Cambiar su contraseña", "Home", new { @class = "nav-link" })</li>
+}
+
+<h3>Bienvenido al panel de administradores de centros de acopio</h3>

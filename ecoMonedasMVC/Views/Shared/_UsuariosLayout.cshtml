@@ -29,78 +29,82 @@
 </style>
 <body>
 
+
+    @if ( ((ecoMonedasMVC.Models.Usuario)Session["Usuario"]) == null){
+        Response.Redirect("/");
+    }
+
     @*-- nav*@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
         <div class="container">
 
-            @Html.ActionLink("NOMBRE DEL USUARIO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink(((ecoMonedasMVC.Models.Usuario)Session["Usuario"]).Nombre, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    @RenderSection("Menu",required: false);
 
-
+                    @RenderSection("Menu", required: false)
                     
                 </ul>
             </div>
         </div>
     </nav>
-    
-  <br /> <br /> <br />
 
-        @RenderBody()
-      
-    
+    <br /> <br /> <br />
+
+    @RenderBody()
+
+
     @*Ecomonedas disponibles*@
-    <div style="background-color:black;padding-bottom:50px; padding-top:30px" >
+    <div style="background-color:black;padding-bottom:50px; padding-top:30px">
         <h1 style="color:white; text-align:center">Tus Ecomonedas</h1>
 
-       
-            <div style="width:900px;  margin-left:275px;" >
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card" style="width:170px">
-                            <div class="card-header">
-                                Ecomonedas
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Disponibles</h5>
-                                <div style="width:100%; text-align:center"> 
-                                    <span class="badge badge-pill badge-success" style="width: 83px; font-size: 37px;">23</span>
-                                </div>
-                            </div>
+
+        <div style="width:900px;  margin-left:275px;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width:170px">
+                        <div class="card-header">
+                            Ecomonedas
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width:170px">
-                            <div class="card-header">
-                                Ecomonedas
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Canjeadas</h5>
-                                <div style="width:100%; text-align:center">
-                                    <span class="badge badge-pill badge-warning" style="width: 83px; font-size: 37px;">23</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" style="width:170px">
-                            <div class="card-header">
-                                Ecomonedas
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Total</h5>
-                                <div style="width:100%; text-align:center">
-                                    <span class="badge badge-pill badge-primary" style="width: 83px; font-size: 37px;">23</span>
-                                </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Disponibles</h5>
+                            <div style="width:100%; text-align:center">
+                                <span class="badge badge-pill badge-success" style="width: 83px; font-size: 37px;">23</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="card" style="width:170px">
+                        <div class="card-header">
+                            Ecomonedas
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Canjeadas</h5>
+                            <div style="width:100%; text-align:center">
+                                <span class="badge badge-pill badge-warning" style="width: 83px; font-size: 37px;">23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width:170px">
+                        <div class="card-header">
+                            Ecomonedas
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Total</h5>
+                            <div style="width:100%; text-align:center">
+                                <span class="badge badge-pill badge-primary" style="width: 83px; font-size: 37px;">23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -108,65 +112,73 @@
 
 
     @*productos disponibles*@
-        <div class="bg-dark">
-            
-          
-            
-            <h1 style="color:white; text-align:center">Productos para canje</h1>
+    <div class="bg-dark">
 
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-                  
-                        <div class="card col-md-2" style="width: 18rem;">
-                            <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
-                            <div class="card-body">
-                                <h5 class="card-title">Jabon Florex</h5>
-                                <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
-                            </div>
-                        </div>
 
-                    <div class="card col-md-2" style="width: 18rem;">
-                        <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
-                        <div class="card-body">
-                            <h5 class="card-title">Jabon Florex</h5>
-                            <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
-                        </div>
+
+        <h1 style="color:white; text-align:center">Productos para canje</h1>
+
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+
+                <div class="card col-md-2" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabon Florex</h5>
+                        <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
                     </div>
+                </div>
 
-                    <div class="card col-md-2" style="width: 18rem;">
-                        <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
-                        <div class="card-body">
-                            <h5 class="card-title">Jabon Florex</h5>
-                            <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
-                        </div>
+                <div class="card col-md-2" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabon Florex</h5>
+                        <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
                     </div>
+                </div>
 
-                    <div class="card col-md-2" style="width: 18rem;">
-                        <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
-                        <div class="card-body">
-                            <h5 class="card-title">Jabon Florex</h5>
-                            <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
-                        </div>
+                <div class="card col-md-2" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabon Florex</h5>
+                        <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
                     </div>
+                </div>
 
-                    <div class="card col-md-2" style="width: 18rem;">
-                        <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
-                        <div class="card-body">
-                            <h5 class="card-title">Jabon Florex</h5>
-                            <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
-                        </div>
+                <div class="card col-md-2" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabon Florex</h5>
+                        <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
                     </div>
+                </div>
 
+                <div class="card col-md-2" style="width: 18rem;">
+                    <img class="card-img-top" src="~/images/EcoMonedas/florex.jpg" alt="Card image cap" style="padding:10px">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabon Florex</h5>
+                        <a href="#" class="btn btn-primary"> 30 ecomonedas</a>
                     </div>
+                </div>
+
             </div>
-            
-
-
-
         </div>
-   
 
+
+
+
+    </div>
+
+    @if (ViewBag.Mensaje != "" && ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@ViewBag.Mensaje</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
     @*--footer*@
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -209,7 +221,7 @@
         </div>
     </footer>
 
-   
+
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
     <script src="~/Scripts/jquery.min.js"></script>

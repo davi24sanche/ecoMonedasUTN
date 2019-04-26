@@ -1,1 +1,16 @@
 ﻿
+@{
+    ViewBag.Title = "Cliente";
+
+    Layout = "~/Views/Shared/_UsuariosLayout.cshtml";
+}
+
+@section Menu {
+    <li class="nav-item">@Html.ActionLink("Billetera virtual", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Cambiar su contraseña", "Index", "Home", new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("Salir", "Salir", "Home", new { @class = "nav-link" })</li>
+}
+
+<h3>Bienvenido al panel de clientes</h3>
+
+@Html.ActionLink("Administrar Centros de Acopio", "Index", "CentroAcopio")
